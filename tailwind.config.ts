@@ -15,6 +15,9 @@ const config: Config = {
 
       fontFamily:{
         danfo:["Danfo", "serif"]
+      },
+      container:{
+        padding:'20px'
       }
     },
   },
