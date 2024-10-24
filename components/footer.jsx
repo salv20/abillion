@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#D9D9D9] py-10">
       <div className="container mx-auto">
-        <div className=" grid grid-cols-1 md:grid-cols-2 xl:flex gap-5 md:gap-10 justify-between items-center">
+        <div className=" grid grid-cols-1 md:grid-cols-2 xl:flex gap-10 justify-between items-center">
           {/*  */}
 
           <div className="grid gap-4 ">
@@ -38,6 +38,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
+                aria-label="subscribe_btn"
                 className="btn_orange h-12 lg:h-10 relative lg:right-8"
                 onClick={(e) => e.preventDefault()}
               >

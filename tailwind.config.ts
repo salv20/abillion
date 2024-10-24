@@ -14,7 +14,8 @@ const config: Config = {
       },
 
       fontFamily:{
-        danfo:["Danfo", "serif"]
+        danfo:["Danfo", "serif"],
+        poppins:['poppins','"serif"']
       },
       container:{
         padding:'20px'

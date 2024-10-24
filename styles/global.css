@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Danfo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Danfo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,15 +7,6 @@
 body {
   background-color: #fafafa;
 }
-
-/* .logo {
-  font-family: "Danfo", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "ELSH" 0;
-  font-size: 30px;
-} */
 
 .btn_orange {
   @apply bg-[#FC8A06] rounded-[200px] px-[36px] py-[6px] font-bold capitalize text-white;

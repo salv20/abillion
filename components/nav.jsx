@@ -4,13 +4,13 @@ import { FaShoppingCart } from "react-icons/fa";
 const Nav = () => {
   return (
     <nav>
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto py-5">
         <div className="flex justify-between items-center">
           <h1 className="logo font-danfo text-[25px] sm:text-[35px]">
             Abilli<span className="text-[#FC8A06]">on</span>
           </h1>
 
-          <div className="hidden md:flex gap-10 lg:gap-20 items-center ">
+          <div className="hidden md:flex gap-10 items-center ">
             <Link href="/">
               <button
                 type="button"
@@ -21,14 +21,6 @@ const Nav = () => {
               </button>
             </Link>
 
-            <button
-              type="button"
-              aria-label="search_btn"
-              className="btn_neutral"
-            >
-              search
-            </button>
-
             <Link href="cart">
               <button
                 type="button"
@@ -38,9 +30,7 @@ const Nav = () => {
                 cart( <FaShoppingCart className="text-[#FC8A06] text-xl" />)
               </button>
             </Link>
-          </div>
 
-          <div>
             <Link href="signup">
               <button
                 type="button"
