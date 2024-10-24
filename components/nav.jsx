@@ -6,7 +6,7 @@ const Nav = () => {
     <nav>
       <div className="container mx-auto py-10">
         <div className="flex justify-between items-center">
-          <h1 className="logo font-danfo text-[35px]">
+          <h1 className="logo font-danfo text-[25px] sm:text-[35px]">
             Abilli<span className="text-[#FC8A06]">on</span>
           </h1>
 

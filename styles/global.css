@@ -26,3 +26,7 @@ body {
 .btn_black {
   @apply font-bold bg-black text-white rounded-[200px] px-[36px] py-[6px] font-bold capitalize;
 }
+
+.socials button {
+  @apply text-white rounded-[30px] p-2 bg-black border-[2px] border-[#FC8A06];
+}
