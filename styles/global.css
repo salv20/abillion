@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Danfo&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #fafafa;
+}
+
+/* .logo {
+  font-family: "Danfo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 0;
+  font-size: 30px;
+} */
+
+.btn_orange {
+  @apply bg-[#FC8A06] rounded-[200px] px-[36px] py-[6px] font-bold capitalize text-white;
+}
+.btn_neutral {
+  @apply font-bold capitalize sm:text-lg;
+}
+.btn_black {
+  @apply font-bold bg-black text-white rounded-[200px] px-[36px] py-[6px] font-bold capitalize;
+}
