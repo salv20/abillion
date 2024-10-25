@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="grid gap-10 lg:gap-5 lg:flex justify-evenly items-center bg-[#03081F] rounded-lg p-10 lg:py-16">
+        <div className="grid gap-10 lg:gap-5 lg:flex justify-evenly items-center bg-[#03081F] rounded-lg px-5 py-10 lg:px-10 lg:py-16">
           <article className="text-[#D9D9D9] grid gap-4">
             <p>Order raw/unprocessed food, and get it at your convinence.</p>
 

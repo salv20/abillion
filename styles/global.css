@@ -8,6 +8,10 @@ body {
   background-color: #fafafa;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: #fc8a06 !important;
+}
+
 .btn_orange {
   @apply bg-[#FC8A06] rounded-[200px] px-[36px] py-[6px] font-bold capitalize text-white;
 }
