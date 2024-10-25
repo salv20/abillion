@@ -3,7 +3,7 @@ import Review from "@/components/review";
 
 const Page = () => {
   return (
-    <div className="py-10">
+    <div>
       <Hero />
       <Review />
     </div>

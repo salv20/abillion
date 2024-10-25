@@ -8,6 +8,12 @@ body {
   background-color: #fafafa;
 }
 
+.swiper-pagination-bullet {
+  padding: 6px;
+  position: relative;
+  top: 12px;
+}
+
 .swiper-pagination-bullet-active {
   background-color: #fc8a06 !important;
 }
