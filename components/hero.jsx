@@ -38,7 +38,7 @@ const Hero = () => {
           </article>
 
           <Image
-            src="/assets/rice.jfif"
+            src="/assets/rice.jpg"
             width={500}
             height={600}
             alt="image"
