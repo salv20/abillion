@@ -32,13 +32,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
   },
-  {
-    src: "/assets/apples.jpg",
-    title: "apples (green) ",
-    price: "5,000",
-    description:
-      "Lorem  ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
+
   {
     src: "/assets/peri.jpg",
     title: "dry periwinkles (1painter)",
@@ -54,13 +48,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
   },
-  {
-    src: "/assets/letuce.jpg",
-    title: "Fresh letuce  (2kg)",
-    price: "4,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
+
   {
     src: "/assets/broiler.jpg",
     title: "chicken (broiler)",
@@ -183,11 +171,11 @@ const Products = () => {
 
           {/*  */}
 
-          <article className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
+          <article className="grid overflow-scroll gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
             {products &&
               products.map((product, index) => (
                 <div
-                  className="text-center pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
+                  className="text-center overflow-scroll pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
                   key={index}
                 >
                   <Image
@@ -198,7 +186,9 @@ const Products = () => {
                     className="rounded-[20px] shadow-lg rounded-b-none h-[150px] sm:h-[210px] border-b-[#FC8A06] border-b-2"
                   />
 
-                  <h1 className="capitalize font-semibold">{product.title}</h1>
+                  <h1 className="capitalize font-semibold px-1">
+                    {product.title}
+                  </h1>
                   <p className="text-[#FC8A06] font-bold text-lg">
                     #{product.price}
                   </p>
