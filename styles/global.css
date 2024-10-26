@@ -18,6 +18,15 @@ body {
   background-color: #fc8a06 !important;
 }
 
+.products_container button {
+  text-transform: capitalize;
+  width: fit-content;
+  /* background-color: red; */
+}
+.active {
+  @apply bg-[#FC8A06] rounded-[200px] px-[30px] py-[6px] font-bold capitalize text-white;
+}
+
 .btn_orange {
   @apply bg-[#FC8A06] rounded-[200px] px-[36px] py-[6px] font-bold capitalize text-white;
 }

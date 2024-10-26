@@ -33,7 +33,7 @@ const reveiews = [
   {
     image: "/assets/user.png",
     comment:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, non a veniam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, non a veniam  aliquam est temporibus.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. recusandes non a veniam  aliquam est temporibus.",
     country: "nigeria",
     name: "miss chidimma",
   },

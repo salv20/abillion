@@ -15,6 +15,27 @@ const Hero = () => {
               <span className="text-[#FC8A06]"> Fast and Fresh</span>
             </h2>
 
+            <div className="grid gap-2">
+              <p className="text-sm">Enter a product to see what we deliver</p>
+
+              <form className="grid gap-3 lg:flex">
+                <input
+                  type="search"
+                  required
+                  placeholder="Rice"
+                  className="placeholder:text-black indent-4 text-black rounded-[40px] outline-none lg:w-[300px] h-12"
+                />
+                <button
+                  type="button"
+                  aria-label="search_btn"
+                  className="btn_orange h-12 w-[80%] mx-auto lg:w-fit relative lg:right-14"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  search
+                </button>
+              </form>
+            </div>
+
             <p className="text-sm">
               Let your food be your medicine, remember health is wealth.
             </p>
