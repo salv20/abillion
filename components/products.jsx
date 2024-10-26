@@ -171,11 +171,11 @@ const Products = () => {
 
           {/*  */}
 
-          <article className="grid overflow-scroll gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
+          <article className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
             {products &&
               products.map((product, index) => (
                 <div
-                  className="text-center overflow-scroll pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
+                  className="text-center product-div pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
                   key={index}
                 >
                   <Image
