@@ -89,7 +89,7 @@ const Review = () => {
               reveiews.map((review, index) => (
                 <SwiperSlide
                   key={index}
-                  className="bg-white rounded-lg py-6 px-4"
+                  className="bg-white rounded-lg py-6 px-4 shadow-lg border-2"
                 >
                   <div className="grid gap-4">
                     <div className="flex items-center gap-4">
