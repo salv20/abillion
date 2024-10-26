@@ -22,12 +22,7 @@ body {
   text-transform: capitalize;
   width: fit-content;
 }
-.product-div {
-  overflow: scroll;
-}
-.product-div::-webkit-scrollbar {
-  display: none;
-}
+
 .active {
   @apply bg-[#FC8A06] rounded-[200px] px-[30px] py-[6px] font-bold capitalize text-white;
 }

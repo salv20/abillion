@@ -67,7 +67,7 @@ const products = [
 
   {
     src: "/assets/snail.jpg",
-    title: "fresh snail (extraLarge-20 pcs)",
+    title: "fresh snail (20 pcs)",
     price: "50,000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
@@ -175,7 +175,7 @@ const Products = () => {
             {products &&
               products.map((product, index) => (
                 <div
-                  className="text-center product-div pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
+                  className="text-center pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
                   key={index}
                 >
                   <Image
