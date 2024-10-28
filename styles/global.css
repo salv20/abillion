@@ -40,3 +40,10 @@ body {
 .socials button {
   @apply text-white rounded-[30px] p-2 bg-black border-[2px] border-[#FC8A06];
 }
+
+.label {
+  @apply capitalize font-bold text-left block;
+}
+.input {
+  @apply w-full h-14 outline-none rounded-lg border-2 indent-2;
+}

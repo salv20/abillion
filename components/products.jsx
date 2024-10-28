@@ -117,7 +117,7 @@ const products = [
   {
     src: "/assets/cat-fish.jpg",
     title: "roasted cat-fish",
-    price: "2,00",
+    price: "2,000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
   },
