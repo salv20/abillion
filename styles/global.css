@@ -45,5 +45,5 @@ body {
   @apply capitalize font-bold text-left block;
 }
 .input {
-  @apply w-full h-14 outline-none rounded-lg border-2 indent-2;
+  @apply w-full h-14 outline-none rounded-lg border-2 border-[#FC8A06]  indent-2;
 }
