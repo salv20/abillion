@@ -34,7 +34,7 @@ body {
   @apply font-bold capitalize sm:text-lg;
 }
 .btn_black {
-  @apply font-bold bg-black text-white rounded-[200px] px-[36px] py-[6px] font-bold capitalize;
+  @apply font-bold bg-black text-white px-5 rounded-[200px] sm:px-[36px] py-[6px] font-bold capitalize;
 }
 
 .socials button {

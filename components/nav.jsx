@@ -10,12 +10,12 @@ const Nav = () => {
             Abilli<span className="text-[#FC8A06]">on</span>
           </h1>
 
-          <div className="hidden md:flex gap-10 items-center ">
+          <div className="flex gap-4 sm:gap-10 items-center ">
             <Link href="/">
               <button
                 type="button"
                 aria-label="home_btn"
-                className="btn_orange"
+                className="btn_orange hidden md:flex"
               >
                 home
               </button>
@@ -25,9 +25,15 @@ const Nav = () => {
               <button
                 type="button"
                 aria-label="cart_btn"
-                className="btn_neutral flex items-center"
+                className="btn_neutral "
               >
-                cart( <FaShoppingCart className="text-[#FC8A06] text-xl" />)
+                <span className="hidden sm:flex items-center">
+                  cart( <FaShoppingCart className="text-[#FC8A06] text-xl" />)
+                </span>
+
+                <span>
+                  <FaShoppingCart className="text-[#FC8A06] text-2xl sm:hidden" />
+                </span>
               </button>
             </Link>
 
@@ -35,7 +41,7 @@ const Nav = () => {
               <button
                 type="button"
                 aria-label="signup_btn"
-                className="btn_black"
+                className="btn_black  "
               >
                 sign up
               </button>

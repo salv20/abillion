@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { TbCurrencyNaira } from "react-icons/tb";
 
 const products = [
   {
@@ -12,7 +13,7 @@ const products = [
   },
   {
     src: "/assets/coconut.jpg",
-    title: "coconut large sizes (3pcs)",
+    title: "large sized coconuts (3pcs)",
     price: "6,000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
@@ -162,7 +163,7 @@ const Products = () => {
             <button type="button" className="active">
               all
             </button>
-            <button type="button">vegetabels</button>
+            <button type="button">vegetables</button>
             <button type="button">poultry</button>
             <button type="button">meat & sea foods</button>
             <button type="button"> seasonings & spices</button>
@@ -189,8 +190,11 @@ const Products = () => {
                   <h1 className="capitalize font-semibold px-1">
                     {product.title}
                   </h1>
-                  <p className="text-[#FC8A06] font-bold text-lg">
-                    #{product.price}
+                  <p className="text-[#FC8A06] font-bold text-lg h-fit flex items-center justify-center ">
+                    <span className=" text-2xl">
+                      <TbCurrencyNaira />
+                    </span>
+                    {product.price}
                   </p>
                 </div>
               ))}

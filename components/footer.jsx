@@ -20,9 +20,8 @@ const Footer = () => {
               Abilli<span className="text-[#FC8A06]">on</span>
             </h1>
             <p>
-              <span className="font-serif">Location</span>: new-market Enugu
-              state. registered under Nigeria Corperate Affairs Commission
-              (CAC).
+              <span className="font-serif">Location</span>: New-market Enugu
+              state. Registered under Corperate Affairs Commission (CAC).
             </p>
           </div>
 
