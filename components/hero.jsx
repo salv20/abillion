@@ -23,7 +23,7 @@ const Hero = () => {
                   type="search"
                   required
                   placeholder="Rice"
-                  className="placeholder:text-black indent-4 text-black rounded-[40px] outline-none lg:w-[300px] h-12"
+                  className="indent-4 text-black rounded-[40px] outline-none lg:w-[300px] h-12"
                 />
                 <button
                   type="button"

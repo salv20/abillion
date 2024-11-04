@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #fafafa;
+  background-color: #f2eaea06;
 }
 
 .swiper-pagination-bullet {
@@ -21,6 +21,15 @@ body {
 .products_container button {
   text-transform: capitalize;
   width: fit-content;
+}
+
+.form-scroll::-webkit-scrollbar,
+.forgetPW-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.form-scroll {
+  @apply px-[10px] lg:h-[100vh] grid items-center lg:overflow-scroll py-[40px] text-center mx-auto;
 }
 
 .active {
@@ -45,5 +54,5 @@ body {
   @apply capitalize font-bold text-left block;
 }
 .input {
-  @apply w-full h-14 outline-none rounded-lg border-2 border-[#FC8A06]  indent-2;
+  @apply w-full h-[50px] outline-none rounded-lg border-[1px] border-[#FBA04B]  indent-2;
 }

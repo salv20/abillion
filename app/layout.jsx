@@ -1,6 +1,4 @@
 import "@/styles/global.css";
-import Nav from "@/components/nav";
-import Footer from "@/components/footer";
 
 export const metadata = {
   title: "abillion",
@@ -10,13 +8,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
-        <Nav />
-
-        {children}
-
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 };
