@@ -10,7 +10,7 @@ const Page = () => {
 
   return (
     <section>
-      <div className="container mx-auto py-14 lg:w-[100%] lg:p-0 lg:m-0 lg:max-w-full">
+      <div className="container mx-auto lg:w-[100%] lg:p-0 lg:m-0 lg:max-w-full">
         <div className="lg:flex items-center gap-[28px] justify-between ">
           {/* IMAGE DIV */}
           <div className="relative hidden lg:block bg-frame_img bg-cover h-[100vh] w-[650px]">
