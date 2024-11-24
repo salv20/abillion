@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { ThreeCircles } from "react-loader-spinner";
 
 const Page = () => {
+  const passRegex = /^(?=.*[0-9])(?=.*[!@#£$%^&*])[a-zA-Z0-9!@#£$%^&*]{6,16}$/;
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -17,11 +18,13 @@ const Page = () => {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [passwordMatch, setPassWordMatch] = useState("");
 
   const router = useRouter();
 
   const handleInputChange = (e) => {
     setError("");
+    setPassWordMatch("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -35,8 +38,15 @@ const Page = () => {
       return;
     }
 
-    setLoading(true);
+    if (!password.match(passRegex)) {
+      setPassWordMatch(
+        "Password must have a special character and a number and length more than 5"
+      );
 
+      return;
+    }
+
+    setLoading(true);
     try {
       const response = await fetch("/api/register", {
         method: "POST",
@@ -55,7 +65,7 @@ const Page = () => {
 
       e.target.reset();
       setFormData({ fullName: "", userName: "", email: "", password: "" });
-      router.push("/");
+      router.push("products");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -144,11 +154,7 @@ const Page = () => {
                     required
                     onChange={handleInputChange}
                   />
-                  {error && (
-                    <p className="text-left text-red-600 font-semibold">
-                      {error}
-                    </p>
-                  )}
+                  {error && <p className="error_message">{error}</p>}
                 </div>
 
                 {/* Password Input */}
@@ -161,8 +167,10 @@ const Page = () => {
                     required
                     onChange={handleInputChange}
                   />
+                  <p className="error_message">{passwordMatch}</p>
+
                   <div
-                    className="absolute top-[10px] right-3 text-3xl text-[#848484] cursor-pointer"
+                    className="absolute top-[12px] right-3 text-3xl text-[#848484] cursor-pointer"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <BiSolidHide /> : <BiShow />}
@@ -176,11 +184,11 @@ const Page = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="relative flex justify-center items-center h-[46px]">
+                <div className="relative flex justify-center items-center h-[38px]">
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`bg-[#FBA04B] font-bold text-[20px] text-white px-4 py-2 rounded-[10px] w-full ${
+                    className={`bg-[#37BBCA] font-bold text-[18px] h-full text-white rounded-[10px] w-full ${
                       loading ? "blur-[2px]" : ""
                     }`}
                   >
@@ -190,9 +198,9 @@ const Page = () => {
                     <div className="absolute">
                       <ThreeCircles
                         visible={true}
-                        height="40"
-                        width="40"
-                        color="#37BBCA"
+                        height="35"
+                        width="35"
+                        color="#ff8804"
                         ariaLabel="loading"
                       />
                     </div>

@@ -56,3 +56,6 @@ body {
 .input {
   @apply w-full h-[50px] outline-none rounded-lg border-[1px] border-[#FBA04B]  indent-2;
 }
+.error_message {
+  @apply text-[13px] text-red-600 text-left;
+}

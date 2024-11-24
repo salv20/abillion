@@ -6,13 +6,15 @@ import { BiShow, BiSolidHide } from "react-icons/bi";
 import Link from "next/link";
 
 import { signIn } from "next-auth/react";
-
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import { ThreeCircles } from "react-loader-spinner";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [loginError, setLoginError] = useState(false);
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -20,21 +22,38 @@ const Page = () => {
   });
 
   const handleInputChange = (e) => {
+    setLoginError("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
   };
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      setLoading(true);
 
+      const { email, password } = formData;
       const res = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
+      console.log(res);
+
+      if (res.error) {
+        console.log(res.error);
+
+        throw "Wrong email or password. Please try again.";
+      }
+
+      router.push("products");
+
+      console.log(res.url, res.status);
     } catch (error) {
       console.log(error);
+      setLoginError(error);
+      console.log(loginError);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -102,7 +121,7 @@ const Page = () => {
                 />
 
                 {/* Password Input */}
-                <div className="relative">
+                <div className="relative flex flex-col gap-[4px]">
                   <input
                     type={showPassword ? "text" : "password"}
                     id="password"
@@ -112,6 +131,7 @@ const Page = () => {
                     required
                     onChange={handleInputChange}
                   />
+
                   {/* Toggle Password Visibility */}
                   <div
                     className="absolute top-[10px] right-3 text-3xl text-[#848484] cursor-pointer"
@@ -119,21 +139,41 @@ const Page = () => {
                   >
                     {showPassword ? <BiSolidHide /> : <BiShow />}
                   </div>
+
+                  <p className="error_message">{loginError}</p>
+
                   <Link
                     href="/forget"
-                    className="text-[#37BBCA] text-[13px] mt-2 block w-fit"
+                    className="text-[#37BBCA] text-[13px] block w-fit"
                   >
                     Forgot password?
                   </Link>
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="bg-[#FBA04B] text-white font-bold text-[20px] px-4 py-2 rounded-[10px]"
-                >
-                  Login
-                </button>
+
+                <div className="relative flex justify-center items-center h-[38px]">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`bg-[#37BBCA] font-bold text-[18px] h-full text-white rounded-[10px] w-full ${
+                      loading ? "blur-[2px]" : ""
+                    }`}
+                  >
+                    Login
+                  </button>
+                  {loading && (
+                    <div className="absolute">
+                      <ThreeCircles
+                        visible={true}
+                        height="35"
+                        width="35"
+                        color="#ff8804"
+                        ariaLabel="loading"
+                      />
+                    </div>
+                  )}
+                </div>
               </form>
             </div>
           </div>
