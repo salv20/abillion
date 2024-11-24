@@ -14,7 +14,7 @@ export const POST = async (req) => {
 
     if (userExist) {
       console.log(userExist);
-      throw Error("user already exist");
+      throw Error("User already exist");
     }
 
     await User.create({

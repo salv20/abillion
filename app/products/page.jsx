@@ -1,7 +1,6 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { ThreeCircles } from "react-loader-spinner";
 import { signOut } from "next-auth/react";
 
 const Product = () => {
