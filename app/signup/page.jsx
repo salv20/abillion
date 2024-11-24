@@ -4,9 +4,64 @@ import Image from "next/image";
 import { useState } from "react";
 import { BiShow, BiSolidHide } from "react-icons/bi";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ThreeCircles } from "react-loader-spinner";
 
 const Page = () => {
-  const [show, setShow] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    userName: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  const handleInputChange = (e) => {
+    setError("");
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { fullName, userName, email, password } = formData;
+
+    if (!fullName || !userName || !email || !password) {
+      setError("Please fill all fields");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const message = data?.message?.includes("ENOTFOUND")
+          ? "Please check your internet connection and try again"
+          : data?.message || "Something went wrong. Please try again.";
+        throw new Error(message);
+      }
+
+      e.target.reset();
+      setFormData({ fullName: "", userName: "", email: "", password: "" });
+      router.push("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section>
@@ -37,7 +92,7 @@ const Page = () => {
 
           {/* FORM DIV */}
 
-          <div className="form-scroll">
+          <div className="form-scroll lg:w-[45%]">
             <div>
               <div className=" grid gap-4 lg:gap-8">
                 <h1 className="font-bold text-[28px] tracking-wider text-center">
@@ -47,7 +102,7 @@ const Page = () => {
                 <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
                   <span className="signup_span" />
                   <p>
-                    already have an account?{" "}
+                    already have an account?&nbsp;
                     <Link href="/login" className="text-[#37BBCA]">
                       Login
                     </Link>
@@ -56,50 +111,62 @@ const Page = () => {
                 </div>
               </div>
 
-              <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="py-4 pt-8 flex flex-col gap-y-6"
+              >
                 <input
                   type="text"
+                  name="fullName"
                   className="input capitalize"
                   placeholder="Full name"
                   required
-                  name="name"
+                  onChange={handleInputChange}
                 />
 
+                {/* User Name Input */}
                 <input
                   type="text"
-                  className="input capitalize "
+                  name="userName"
+                  className="input capitalize"
                   placeholder="User name"
                   required
+                  onChange={handleInputChange}
                 />
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  className="input"
-                  placeholder="Email address"
-                />
+                {/* Email Input */}
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    className="input"
+                    placeholder="Email address"
+                    required
+                    onChange={handleInputChange}
+                  />
+                  {error && (
+                    <p className="text-left text-red-600 font-semibold">
+                      {error}
+                    </p>
+                  )}
+                </div>
 
+                {/* Password Input */}
                 <div className="relative">
                   <input
-                    type={!show ? "password" : "text"}
-                    id="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     className="input"
                     placeholder="Password"
+                    required
+                    onChange={handleInputChange}
                   />
-
-                  <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
-                    <BiShow
-                      className={show ? "hidden" : "block"}
-                      onClick={() => setShow(true)}
-                    />
-                    <BiSolidHide
-                      className={!show ? "hidden" : "block"}
-                      onClick={() => setShow(false)}
-                    />
+                  <div
+                    className="absolute top-[10px] right-3 text-3xl text-[#848484] cursor-pointer"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <BiSolidHide /> : <BiShow />}
                   </div>
-
                   <Link
                     href="forget"
                     className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit"
@@ -108,23 +175,41 @@ const Page = () => {
                   </Link>
                 </div>
 
-                <button
-                  type="submit"
-                  className="bg-[#FBA04B] font-bold text-[20px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[10px]"
-                >
-                  Sign up
-                </button>
+                {/* Submit Button */}
+                <div className="relative flex justify-center items-center h-[46px]">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`bg-[#FBA04B] font-bold text-[20px] text-white px-4 py-2 rounded-[10px] w-full ${
+                      loading ? "blur-[2px]" : ""
+                    }`}
+                  >
+                    Sign up
+                  </button>
+                  {loading && (
+                    <div className="absolute">
+                      <ThreeCircles
+                        visible={true}
+                        height="40"
+                        width="40"
+                        color="#37BBCA"
+                        ariaLabel="loading"
+                      />
+                    </div>
+                  )}
+                </div>
               </form>
 
               <p className="font-roboto font-400 text-[13px]">
-                By continuing, you agree to our{" "}
+                By continuing, you agree to our&nbsp;
                 <Link href="/" className="text-[#37BBCA]">
                   Terms of service
-                </Link>{" "}
-                and{" "}
+                </Link>
+                &nbsp; and&nbsp;
                 <Link href="/" className="text-[#37BBCA]">
                   Privacy policy
-                </Link>{" "}
+                </Link>
+                &nbsp;
               </p>
             </div>
           </div>

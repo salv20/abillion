@@ -46,7 +46,7 @@ const Footer = () => {
             </form>
 
             <p className="font-serif">
-              We wont spam, read our{" "}
+              We wont spam, read our&nbsp;
               <Link href="email-policy">email policy.</Link>
             </p>
 

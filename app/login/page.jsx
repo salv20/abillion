@@ -5,8 +5,38 @@ import { useState } from "react";
 import { BiShow, BiSolidHide } from "react-icons/bi";
 import Link from "next/link";
 
+import { signIn } from "next-auth/react";
+
+import { useNavigate } from "react-router-dom";
+
 const Page = () => {
-  const [show, setShow] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <section>
@@ -47,7 +77,7 @@ const Page = () => {
                 <div className="text-[16px] flex items-center gap-[8px] font-[400] justify-center">
                   <span className="signup_span" />
                   <p>
-                    Don’t have an account?{" "}
+                    Don’t have an account?&nbsp;
                     <Link href="/signup" className="text-[#37BBCA]">
                       Sign up
                     </Link>
@@ -56,46 +86,51 @@ const Page = () => {
                 </div>
               </div>
 
-              <form action="" className="py-4 pt-8 flex flex-col gap-y-6">
+              <form
+                action=""
+                className="py-4 pt-8 flex flex-col gap-y-6"
+                onSubmit={handleSubmit}
+              >
                 <input
                   id="email"
                   name="email"
                   type="email"
                   className="input"
                   placeholder="Email address"
+                  required
+                  onChange={handleInputChange}
                 />
 
+                {/* Password Input */}
                 <div className="relative">
                   <input
-                    type={!show ? "password" : "text"}
+                    type={showPassword ? "text" : "password"}
                     id="password"
                     name="password"
                     className="input"
                     placeholder="Password"
+                    required
+                    onChange={handleInputChange}
                   />
-
-                  <div className="absolute top-[10px] text-[#848484] cursor-pointer right-3 text-3xl">
-                    <BiShow
-                      className={show ? "hidden" : "block"}
-                      onClick={() => setShow(true)}
-                    />
-                    <BiSolidHide
-                      className={!show ? "hidden" : "block"}
-                      onClick={() => setShow(false)}
-                    />
+                  {/* Toggle Password Visibility */}
+                  <div
+                    className="absolute top-[10px] right-3 text-3xl text-[#848484] cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <BiSolidHide /> : <BiShow />}
                   </div>
-
                   <Link
-                    href="forget"
-                    className="text-[#37BBCA] text-[13px] mt-[2px] flex w-fit"
+                    href="/forget"
+                    className="text-[#37BBCA] text-[13px] mt-2 block w-fit"
                   >
                     Forgot password?
                   </Link>
                 </div>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-[#FBA04B] font-bold text-[20px] text-[#FFFFFF] px-[12px] py-[11px] h-[46px] rounded-[10px]"
+                  className="bg-[#FBA04B] text-white font-bold text-[20px] px-4 py-2 rounded-[10px]"
                 >
                   Login
                 </button>

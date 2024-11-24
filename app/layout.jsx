@@ -1,5 +1,5 @@
 import "@/styles/global.css";
-
+import { AuthProvider } from "../provider.js";
 export const metadata = {
   title: "abillion",
   description: "online food website",
@@ -8,7 +8,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 };
