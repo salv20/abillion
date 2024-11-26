@@ -6,6 +6,7 @@ import { BiShow, BiSolidHide } from "react-icons/bi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ThreeCircles } from "react-loader-spinner";
+import { signIn } from "next-auth/react";
 
 const SignupForm = () => {
   const passRegex = /^(?=.*[0-9])(?=.*[!@#£$%^&*])[a-zA-Z0-9!@#£$%^&*]{6,16}$/;
@@ -40,13 +41,14 @@ const SignupForm = () => {
 
     if (!password.match(passRegex)) {
       setPassWordMatch(
-        "Password must have a special character and a number and length more than 5"
+        "Password must have a special character and a number; length more than 5 and less than 15"
       );
 
       return;
     }
 
     setLoading(true);
+
     try {
       const response = await fetch("/api/register", {
         method: "POST",
@@ -64,7 +66,17 @@ const SignupForm = () => {
       }
 
       e.target.reset();
+
       setFormData({ fullName: "", userName: "", email: "", password: "" });
+
+      //LOGIN OF USERS
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      console.log(res);
+
       router.push("products");
     } catch (err) {
       setError(err.message);

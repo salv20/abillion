@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 
-const Nav = () => {
+const LandingNav = () => {
   return (
     <nav>
       <div className="container mx-auto py-5">
@@ -53,4 +53,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default LandingNav;

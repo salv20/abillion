@@ -1,11 +1,12 @@
-import "@/styles/global.css";
-import { AuthProvider } from "../provider.js";
+import { AuthProvider } from "@/provider";
+import "./globals.css";
+
 export const metadata = {
-  title: "abillion",
-  description: "online food website",
+  title: "a billion",
+  description: "online food store",
 };
 
-const RootLayout = ({ children }) => {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
@@ -13,6 +14,4 @@ const RootLayout = ({ children }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

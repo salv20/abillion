@@ -1,7 +1,8 @@
 "use client";
+
 import Image from "next/image";
 
-const Hero = () => {
+const LandingHero = () => {
   return (
     <section>
       <div className="container mx-auto pt-5">
@@ -55,4 +56,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default LandingHero;

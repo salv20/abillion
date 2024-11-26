@@ -1,19 +1,17 @@
-import Hero from "@/components/hero";
-import Review from "@/components/review";
-import Products from "@/components/products";
-import Footer from "@/components/footer";
-import Nav from "@/components/nav";
-
+import LandingFooter from "./components/LandingFooter";
+import LandingHero from "./components/LandingHero";
+import LandingNav from "./components/LandingNav";
+import LandingProducts from "./components/LandingProducts";
+import LandingReviews from "./components/LandingReviews";
 const Page = () => {
   return (
     <div>
-      <Nav />
-      <Hero />
-      <Products />
-      <Review />
-      <Footer />
+      <LandingNav />
+      <LandingHero />
+      <LandingProducts />
+      <LandingReviews />
+      <LandingFooter />
     </div>
   );
 };
-
 export default Page;

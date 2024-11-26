@@ -147,7 +147,7 @@ const products = [
   },
 ];
 
-const Products = () => {
+const LandingProducts = () => {
   return (
     <section className="my-12 products_container">
       <div className="container mx-auto">
@@ -205,4 +205,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default LandingProducts;

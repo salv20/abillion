@@ -27,8 +27,8 @@ const LoginForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
       setLoading(true);
 
       const { email, password } = formData;
