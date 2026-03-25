@@ -206,21 +206,21 @@ const LandingFooter = () => {
           </div>
 
           {/* Contact & Socials Column */}
-          <div className="lg:col-span-3 space-y-10">
+          <div className="lg:col-span-3 space-y-6">
             <div>
-              <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest mb-4">
+              <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest mb-2">
                 Direct Line
               </h4>
               <a
                 href="https://wa.me/2340000000000"
-                className="text-2xl font-bold hover:text-[#FC8A06] transition-all"
+                className="text-lg font-bold hover:text-[#FC8A06] transition-all"
               >
                 +234 810 000 0000
               </a>
             </div>
 
             <div>
-              <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest mb-4">
+              <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest mb-2">
                 Visit Us
               </h4>
               <p className="text-gray-400 text-lg leading-snug">
@@ -232,11 +232,11 @@ const LandingFooter = () => {
           </div>
 
           {/* Navigation Column */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
+          <div className="lg:col-span-3 flex flex-col gap-4">
             <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest">
               Navigation
             </h4>
-            <ul className="space-y-4 text-xl font-medium">
+            <ul className="space-y-2 text-xl font-medium">
               <li>
                 <Link
                   href="/"

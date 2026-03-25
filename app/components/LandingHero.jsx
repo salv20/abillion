@@ -96,7 +96,7 @@ const LandingHero = () => {
               {/* Image Frame */}
               <div className="absolute inset-0 border-[16px] border-white shadow-2xl rounded-[60px] overflow-hidden">
                 <Image
-                  src="/assets/rice.jpg"
+                  src="/hero-img.png"
                   alt="Raw Food Showcase"
                   fill
                   className="object-cover scale-110 hover:scale-125 transition-transform duration-1000"
