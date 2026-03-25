@@ -2,204 +2,198 @@
 
 import Image from "next/image";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const products = [
   {
     src: "/assets/Cabbage-Fresh.jpg",
     title: "Fresh Cabbage (2kg)",
     price: "5,000",
+    category: "vegetables",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Crisp, farm-fresh green cabbage. Perfect for detox juices, crunchy salads, or traditional steamed sides.",
   },
   {
     src: "/assets/coconut.jpg",
-    title: "large sized coconuts (3pcs)",
+    title: "Large Coconuts (3pcs)",
     price: "6,000",
+    category: "local foods",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Mature, heavy coconuts with sweet water and thick meat. Ideal for fresh milk extraction or healthy snacking.",
   },
   {
     src: "/assets/turkey-carton.jpg",
-    title: "turkey-carton (10kg)",
+    title: "Turkey Carton (10kg)",
     price: "70,000",
+    category: "meat & sea foods",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Premium grade-A turkey parts, frozen at peak freshness to retain succulent flavor and lean protein content.",
   },
-
   {
     src: "/assets/Chicken-Wings.jpg",
     title: "Chicken Wings (1kg)",
     price: "8,000",
+    category: "poultry",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Tender, juicy chicken wings sourced from healthy, grain-fed poultry. Perfect for grilling or air-frying.",
   },
-
   {
     src: "/assets/peri.jpg",
-    title: "dry periwinkles (1painter)",
+    title: "Dry Periwinkles (1 Painter)",
     price: "10,000",
+    category: "meat & sea foods",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Thoroughly cleaned and sand-free. These add a rich, traditional sea-salt depth to your native soups.",
   },
-
   {
     src: "/assets/Dry Onion basket.jpg",
-    title: "Dry Onion (basket 10kg)",
+    title: "Dry Onion (10kg Basket)",
     price: "40,000",
+    category: "vegetables",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Sun-cured purple onions with a sharp aroma. Essential for building the flavor base of any professional meal.",
   },
-
-  {
-    src: "/assets/broiler.jpg",
-    title: "chicken (broiler)",
-    price: "10,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/chicken gizz.jpg",
-    title: "chicken gizzard",
-    price: "20,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
   {
     src: "/assets/snail.jpg",
-    title: "fresh snail (20 pcs)",
+    title: "Fresh Snail (20 pcs)",
     price: "50,000",
+    category: "meat & sea foods",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Jumbo-sized land snails, rich in protein and incredibly tender when prepared. A true gourmet delicacy.",
   },
-
-  {
-    src: "/assets/onga.jpg",
-    title: "songa spice",
-    price: "500",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/fish-spice.jpg",
-    title: "fish spice ",
-    price: "750",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/crayfish.jpg",
-    title: "crayfish (10kg bag)",
-    price: "20,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
   {
     src: "/assets/live-goat.jpg",
-    title: "full goat (slaughtered)",
+    title: "Full Goat (Slaughtered)",
     price: "60,000",
+    category: "meat & sea foods",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/titus-fish.jpg",
-    title: "frozen titus fish (5pcs)",
-    price: "20,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/cat-fish.jpg",
-    title: "roasted cat-fish",
-    price: "2,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/melon.jpg",
-    title: "equsi/melon (1 derica)",
-    price: "20,000",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/palm-fruit.jpg",
-    title: "palm kernel fruit",
-    price: "2,500",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
-  },
-
-  {
-    src: "/assets/cow-kidney.jpg",
-    title: "cow-kidney",
-    price: "3,500",
-    description:
-      "Lorem  ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur adipisicing elit. Quia, doloremque!",
+      "Freshly slaughtered and processed under strict hygienic conditions. Tender meat with natural, earthy flavor.",
   },
 ];
 
+const categories = [
+  "all",
+  "vegetables",
+  "poultry",
+  "meat & sea foods",
+  "seasonings & spices",
+  "local foods",
+];
+
 const LandingProducts = () => {
+  const [activeTab, setActiveTab] = useState("all");
+
+  const filteredProducts =
+    activeTab === "all"
+      ? products
+      : products.filter((p) => p.category === activeTab);
+
   return (
-    <section className="my-12 products_container">
-      <div className="container mx-auto">
-        <div className="grid gap-6">
-          <div className="text-center space-y-2">
-            <h3 className="font-serif lg:text-lg">Fresh From abillion</h3>
-            <h1 className="text-[25px] uppercase sm:text-[30px] lg:text-[35px] font-bold font-poppins">
-              our Products
-            </h1>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="space-y-2">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="text-[#FC8A06] font-bold tracking-widest uppercase text-sm"
+            >
+              Fresh From Abillion
+            </motion.span>
+            <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-[#03081F]">
+              Explore Our <span className="italic font-light">Inventory</span>
+            </h2>
           </div>
 
-          <div className="bg-black text-white font-bold grid grid-cols-2 md:grid-cols-3 items-center lg:grid-cols-4 xl:grid-cols-6 gap-y-4 py-4 px-4 sm:px-8 rounded-[50px] justify-items-center">
-            <button type="button" className="active">
-              all
-            </button>
-            <button type="button">vegetables</button>
-            <button type="button">poultry</button>
-            <button type="button">meat & sea foods</button>
-            <button type="button"> seasonings & spices</button>
-            <button type="button">local foods</button>
+          {/* Filter Bar */}
+          <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar max-w-full">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveTab(cat)}
+                className={`px-6 py-2 rounded-full whitespace-nowrap font-medium transition-all duration-300 border ${
+                  activeTab === cat
+                    ? "bg-[#03081F] text-white border-[#03081F] shadow-lg"
+                    : "bg-transparent text-gray-500 border-gray-200 hover:border-[#FC8A06]"
+                }`}
+              >
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </button>
+            ))}
           </div>
-
-          {/*  */}
-
-          <article className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
-            {products &&
-              products.map((product, index) => (
-                <div
-                  className="text-center pb-2 md:pb-4 h-[250px] sm:h-[300px] items-center  border-[#FC8A06] border-2 grid gap-2 rounded-[20px] "
-                  key={index}
-                >
-                  <Image
-                    src={product.src}
-                    alt="product"
-                    width={350}
-                    height={350}
-                    className="rounded-[20px] shadow-lg rounded-b-none h-[150px] sm:h-[210px] border-b-[#FC8A06] border-b-2"
-                  />
-
-                  <h1 className="capitalize font-semibold px-1">
-                    {product.title}
-                  </h1>
-                  <p className="text-[#FC8A06] font-bold text-lg h-fit flex items-center justify-center ">
-                    <span className=" text-2xl">
-                      <TbCurrencyNaira />
-                    </span>
-                    {product.price}
-                  </p>
-                </div>
-              ))}
-          </article>
         </div>
+
+        {/* Product Grid */}
+        <motion.div
+          layout
+          className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {filteredProducts.map((product, index) => (
+            <motion.div
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+              key={product.title}
+              className="group bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500"
+            >
+              {/* Image Container */}
+              <div className="relative h-[240px] overflow-hidden">
+                <Image
+                  src={product.src}
+                  alt={product.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#03081F]">
+                    {product.category}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-[#03081F] leading-tight group-hover:text-[#FC8A06] transition-colors">
+                  {product.title}
+                </h3>
+                <p className="text-gray-500 text-sm line-clamp-2 leading-relaxed">
+                  {product.description}
+                </p>
+
+                <div className="flex items-center justify-between pt-2">
+                  <div className="flex items-center text-[#FC8A06] font-black text-2xl">
+                    <TbCurrencyNaira className="text-3xl" />
+                    <span>{product.price}</span>
+                  </div>
+
+                  <motion.button
+                    whileTap={{ scale: 0.9 }}
+                    className="bg-[#f8f8f8] p-3 rounded-2xl group-hover:bg-[#FC8A06] group-hover:text-white transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14m-7-7 7 7-7 7" />
+                    </svg>
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
