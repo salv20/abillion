@@ -212,7 +212,7 @@ const LandingFooter = () => {
                 Direct Line
               </h4>
               <a
-                href="https://wa.me/2340000000000"
+                href="https://wa.me/2347036223329"
                 className="text-lg font-bold hover:text-[#FC8A06] transition-all"
               >
                 +234 810 000 0000
