@@ -1,10 +1,10 @@
 const Categories = [
   "all",
-  "vegetables",
-  "poultry",
-  "meat & sea foods",
-  "seasonings & spices",
   "local foods",
+  "grains & legumes",
+  "vegetables",
+  "spices & condiments",
+  "seafood",
 ];
 
 export default Categories;

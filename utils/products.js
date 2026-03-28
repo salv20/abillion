@@ -1,67 +1,75 @@
 const Products = [
   {
-    src: "/assets/Cabbage-Fresh.jpg",
-    title: "Fresh Cabbage (2kg)",
-    price: "5,000",
-    category: "vegetables",
-    description:
-      "Crisp, farm-fresh green cabbage. Perfect for detox juices, crunchy salads, or traditional steamed sides.",
-  },
-  {
-    src: "/assets/coconut.jpg",
-    title: "Large Coconuts (3pcs)",
-    price: "6,000",
+    src: "/foodimages/abacha.jpeg",
+    title: "Abacha",
+    price: "2,500 - 3,000",
     category: "local foods",
     description:
-      "Mature, heavy coconuts with sweet water and thick meat. Ideal for fresh milk extraction or healthy snacking.",
+      "Authentic African salad made from dried cassava flakes. Perfect for traditional meals, rich in flavor and commonly enjoyed with palm oil, ugba, and spices.",
   },
   {
-    src: "/assets/turkey-carton.jpg",
-    title: "Turkey Carton (10kg)",
-    price: "70,000",
-    category: "meat & sea foods",
+    src: "/foodimages/akidi.jpeg",
+    title: "Large Akidi (Paint)",
+    price: "4,500",
+    category: "grains & legumes",
     description:
-      "Premium grade-A turkey parts, frozen at peak freshness to retain succulent flavor and lean protein content.",
+      "High-quality black beans (Akidi), well dried and cleaned. Rich in protein and ideal for local delicacies like abacha and native soups.",
   },
   {
-    src: "/assets/Chicken-Wings.jpg",
-    title: "Chicken Wings (1kg)",
-    price: "8,000",
-    category: "poultry",
+    src: "/foodimages/akpaka.jpeg",
+    title: "Akpaka (1 Cup)",
+    price: "600",
+    category: "seafood",
     description:
-      "Tender, juicy chicken wings sourced from healthy, grain-fed poultry. Perfect for grilling or air-frying.",
+      "Fresh and properly dried stockfish flakes (Akpaka). Adds a rich umami taste and aroma to soups like egusi and ogbono.",
   },
   {
-    src: "/assets/peri.jpg",
-    title: "Dry Periwinkles (1 Painter)",
+    src: "/foodimages/azamu-beans.jpeg",
+    title: "Azamu Beans (1 Paint)",
+    price: "5,000",
+    category: "grains & legumes",
+    description:
+      "Premium quality Azamu beans, carefully sorted and stone-free. Cooks soft and perfect for porridge, moi-moi, and akara.",
+  },
+  {
+    src: "/foodimages/black-beans.jpeg",
+    title: "Black Beans (Akidi) (1 Paint)",
+    price: "6,000",
+    category: "grains & legumes",
+    description:
+      "Nutritious black beans packed with protein and fiber. Ideal for traditional dishes and healthy meal options.",
+  },
+  {
+    src: "/foodimages/brown-beans.jpeg",
+    title: "Brown Beans (1 Paint)",
     price: "10,000",
-    category: "meat & sea foods",
+    category: "grains & legumes",
     description:
-      "Thoroughly cleaned and sand-free. These add a rich, traditional sea-salt depth to your native soups.",
+      "Clean, high-grade brown beans with no stones or dirt. Perfect for everyday meals like beans porridge, moi-moi, and akara.",
   },
   {
-    src: "/assets/Dry Onion basket.jpg",
-    title: "Dry Onion (10kg Basket)",
-    price: "40,000",
+    src: "/foodimages/dry-bread-fruit.jpeg",
+    title: "Dry Breadfruit (1 Milk Cup)",
+    price: "500",
+    category: "grains & legumes",
+    description:
+      "Dried breadfruit (Ukwa), rich in nutrients and ideal for preparing traditional African porridge. Naturally flavorful and filling.",
+  },
+  {
+    src: "/foodimages/dry-okra.jpeg",
+    title: "Dry Okra (1 Paint)",
+    price: "6,000",
     category: "vegetables",
     description:
-      "Sun-cured purple onions with a sharp aroma. Essential for building the flavor base of any professional meal.",
+      "Sun-dried okra slices, perfect for thickening soups. Adds a smooth texture and rich taste to traditional dishes.",
   },
   {
-    src: "/assets/snail.jpg",
-    title: "Fresh Snail (20 pcs)",
-    price: "50,000",
-    category: "meat & sea foods",
+    src: "/foodimages/dry-pepper.jpeg",
+    title: "Dry Pepper (1 Milk Cup)",
+    price: "500",
+    category: "spices & condiments",
     description:
-      "Jumbo-sized land snails, rich in protein and incredibly tender when prepared. A true gourmet delicacy.",
-  },
-  {
-    src: "/assets/live-goat.jpg",
-    title: "Full Goat (Slaughtered)",
-    price: "60,000",
-    category: "meat & sea foods",
-    description:
-      "Freshly slaughtered and processed under strict hygienic conditions. Tender meat with natural, earthy flavor.",
+      "Finely dried pepper with a strong, spicy kick. Essential for enhancing flavor in soups, stews, and sauces.",
   },
 ];
 
