@@ -24,7 +24,10 @@ const features = [
 
 const LandingFeatures = () => {
   return (
-    <section className="relative mt-20 py-32 bg-[#03081F] text-white overflow-hidden">
+    <section
+      id="About"
+      className="relative mt-20 py-32 bg-[#03081F] text-white overflow-hidden scroll-mt-24"
+    >
       {/* Background Decorative Text - Large & Faded */}
       <div className="absolute top-10 left-0 w-full overflow-hidden pointer-events-none select-none opacity-[0.03]">
         <h2 className="text-[20vw] font-black leading-none whitespace-nowrap">

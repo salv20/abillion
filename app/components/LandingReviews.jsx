@@ -65,7 +65,10 @@ const ReviewCard = ({ review }) => (
 
 const LandingReviews = () => {
   return (
-    <section className="py-20 bg-[#fafafa] overflow-hidden">
+    <section
+      id="Testimonials"
+      className="py-20 bg-[#fafafa] overflow-hidden scroll-mt-24"
+    >
       <div className="container mx-auto px-6 mb-12 text-center">
         <motion.h1
           initial={{ opacity: 0 }}

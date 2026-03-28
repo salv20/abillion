@@ -59,19 +59,6 @@ const LandingHero = () => {
               energy of nature delivered to you.
             </motion.p>
 
-            <motion.div variants={itemVars} className="relative max-w-lg">
-              <div className="relative group">
-                <input
-                  type="search"
-                  placeholder="Search raw honey, grains..."
-                  className="w-full pl-8 pr-36 py-6 bg-white border-none rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-[#FC8A06] outline-none transition-all text-lg"
-                />
-                <button className="absolute right-3 top-3 bottom-3 bg-[#FC8A06] text-white px-8 rounded-xl font-bold hover:bg-[#03081F] transition-colors shadow-lg">
-                  Search
-                </button>
-              </div>
-            </motion.div>
-
             <motion.p
               variants={itemVars}
               className="flex items-center gap-3 text-sm font-semibold text-gray-400"
