@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const LandingHero = () => {
-  // Animation Variants
   const containerVars = {
     initial: { opacity: 0 },
     animate: {
@@ -22,7 +21,7 @@ const LandingHero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#fafafa]">
+    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-[#fafafa]">
       {/* Decorative background shape */}
       <motion.div
         initial={{ opacity: 0, x: 200 }}
