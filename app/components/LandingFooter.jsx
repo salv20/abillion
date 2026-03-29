@@ -5,16 +5,28 @@ import { motion } from "framer-motion";
 import { FaWhatsapp, FaInstagram, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
 
+const phoneNumber = "2347036223329";
+const message = encodeURIComponent(
+  "Hello Abillion, I want to inquire about...",
+);
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+
 const LandingFooter = () => {
   return (
     <footer className="bg-[#03081F] text-white pt-24 pb-12 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           {/* Big Branding Column */}
 
           <div className="lg:col-span-6 space-y-4">
             <div className="flex items-center gap-1">
-              <Image src="/logo.png" alt="logo" height={10} width={40} />
+              <Image
+                src="/logo.png"
+                alt="logo"
+                height={10}
+                width={30}
+                className="rounded-md"
+              />
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -46,12 +58,10 @@ const LandingFooter = () => {
               <h4 className="text-[#FC8A06] text-xs font-bold uppercase tracking-widest mb-2">
                 Direct Line
               </h4>
-              <a
-                href="https://wa.me/2347036223329"
-                className="text-lg font-bold hover:text-[#FC8A06] transition-all"
-              >
+
+              <span className="text-lg font-bold hover:text-[#FC8A06] transition-all">
                 +234 703 622 3329
-              </a>
+              </span>
             </div>
 
             <div>
@@ -83,7 +93,7 @@ const LandingFooter = () => {
               </li>
               <li>
                 <Link
-                  href="#products"
+                  href="/products"
                   className="hover:pl-2 transition-all duration-300 flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-[#FC8A06] group-hover:w-4 transition-all" />{" "}
@@ -91,13 +101,15 @@ const LandingFooter = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#contact"
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:pl-2 transition-all duration-300 flex items-center gap-2 group"
                 >
                   <span className="w-0 h-px bg-[#FC8A06] group-hover:w-4 transition-all" />{" "}
                   Inquire
-                </Link>
+                </a>
               </li>
             </ul>
 

@@ -69,7 +69,7 @@ const LandingReviews = () => {
       id="Testimonials"
       className="py-20 bg-[#fafafa] overflow-hidden scroll-mt-24"
     >
-      <div className="container mx-auto px-6 mb-12 text-center">
+      <div className="container mx-auto px-4 mb-12 text-center">
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

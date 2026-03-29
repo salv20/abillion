@@ -13,9 +13,11 @@ export default function ProductsPage() {
       <LandingNav />
 
       {/* Page Header for context */}
-      <div className="container mx-auto px-6 py-10">
-        <h1 className="text-6xl font-black text-[#03081F]">Marketplace</h1>
-        <p className="text-gray-500 mt-4 max-w-lg">
+      <div className="container mx-auto px-4">
+        <h1 className="text-2xl md:text-4xl font-black text-[#03081F]">
+          Marketplace
+        </h1>
+        <p className="text-gray-500 mt-2 max-w-lg">
           Browse our full selection of raw, farm-fresh ingredients. Everything
           listed here is currently available for same-day delivery in Enugu.
         </p>

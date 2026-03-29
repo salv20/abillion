@@ -42,7 +42,7 @@ const Products = [
   {
     src: "/foodimages/brown-beans.jpeg",
     title: "Brown Beans (1 Paint)",
-    price: "10,000",
+    price: "4,000",
     category: "grains & legumes",
     description:
       "Clean, high-grade brown beans with no stones or dirt. Perfect for everyday meals like beans porridge, moi-moi, and akara.",

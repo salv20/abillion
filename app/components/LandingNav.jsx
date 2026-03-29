@@ -27,7 +27,7 @@ const LandingNav = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100"
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <Link href="/" className="group flex gap-2 items-center">
           <Image
@@ -88,7 +88,7 @@ const LandingNav = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
-            <div className="flex flex-col gap-6 px-6 py-8">
+            <div className="flex flex-col gap-6 px-4 py-8">
               {navLinks.map((item, i) => (
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}

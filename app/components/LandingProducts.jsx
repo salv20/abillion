@@ -26,11 +26,11 @@ const LandingProducts = ({
   }, [activeTab, searchQuery, limit]);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-8">
+    <section className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-4 gap-6">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#03081F]">
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#03081F]">
               {limit ? "Featured" : "All"}{" "}
               <span className="italic font-light text-[#FC8A06]">Items</span>
             </h2>
@@ -61,7 +61,7 @@ const LandingProducts = ({
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`px-6 py-2 capitalize rounded-full whitespace-nowrap font-medium transition-all border ${
+              className={`px-4 py-2 capitalize rounded-full whitespace-nowrap font-medium transition-all border ${
                 activeTab === cat
                   ? "bg-[#03081F] text-white border-[#03081F]"
                   : "text-gray-800 border-gray-100"

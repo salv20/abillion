@@ -21,7 +21,7 @@ const LandingHero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-[#fafafa]">
+    <section className="relative min-h-screen flex items-center pt-28 overflow-hidden bg-[#fafafa]">
       {/* Decorative background shape */}
       <motion.div
         initial={{ opacity: 0, x: 200 }}
@@ -30,19 +30,19 @@ const LandingHero = () => {
         className="absolute top-0 right-0 w-[40%] h-full bg-[#fdf2e9] -z-10 rounded-l-[200px] hidden lg:block"
       />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.article
             variants={containerVars}
             initial="initial"
             animate="animate"
-            className="space-y-8"
+            className="space-y-6"
           >
             <motion.div variants={itemVars}>
               <span className="inline-block text-[#FC8A06] font-bold tracking-widest uppercase text-xs bg-orange-100 px-4 py-1.5 rounded-full mb-4">
                 Raw • Unprocessed • Pure
               </span>
-              <h2 className="text-6xl lg:text-8xl font-bold font-poppins text-[#03081F] leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-bold font-poppins text-[#03081F]">
                 Feast Your <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FC8A06] to-[#ffba6a]">
                   Senses.

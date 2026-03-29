@@ -35,7 +35,7 @@ const LandingFeatures = () => {
         </h2>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-3 gap-16 lg:gap-8">
           {features.map((feature, index) => (
             <motion.div
