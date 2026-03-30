@@ -25,7 +25,7 @@ const Page = () => {
           limit={16}
         />
 
-        <div className="w-fit mx-auto mt-8">
+        <div className="w-fit mx-auto mt-10">
           <Link
             href="/products"
             className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300 shadow-md"
