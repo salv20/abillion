@@ -6,6 +6,8 @@ import ProductCard from "./ProductCard";
 import Categories from "@/utils/categories";
 import Products from "@/utils/products";
 
+console.log(Products.length);
+
 const LandingProducts = ({
   onProductClick,
   limit = null,
@@ -26,9 +28,9 @@ const LandingProducts = ({
   }, [activeTab, searchQuery, limit]);
 
   return (
-    <section className="py-14 bg-white">
+    <section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-4 gap-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-4 gap-4">
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold text-[#03081F]">
               {limit ? "Featured" : "All"}{" "}

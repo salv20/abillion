@@ -13,7 +13,7 @@ export default function ProductsPage() {
       <LandingNav />
 
       {/* Page Header for context */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-4">
         <h1 className="text-2xl md:text-4xl font-black text-[#03081F]">
           Marketplace
         </h1>
@@ -23,11 +23,12 @@ export default function ProductsPage() {
         </p>
       </div>
 
-      <LandingProducts
-        onProductClick={(p) => setSelectedProduct(p)}
-        showSearch={true}
-        // No limit passed, so it shows all
-      />
+      <div className="pb-10">
+        <LandingProducts
+          onProductClick={(p) => setSelectedProduct(p)}
+          showSearch={true}
+        />
+      </div>
 
       <ProductDrawer
         product={selectedProduct}
