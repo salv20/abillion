@@ -19,17 +19,20 @@ const Page = () => {
       <LandingHero />
       <LandingFeatures />
 
-      <div className="flex flex-col items-center gap-8 py-14 ">
+      <div className="py-14 ">
         <LandingProducts
           onProductClick={(product) => setSelectedProduct(product)}
           limit={16}
         />
 
-        <Link href="/products">
-          <button className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300 shadow-md">
+        <div className="w-fit mx-auto mt-8">
+          <Link
+            href="/products"
+            className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300 shadow-md"
+          >
             View All Products
-          </button>
-        </Link>
+          </Link>
+        </div>
       </div>
 
       <ProductDrawer
